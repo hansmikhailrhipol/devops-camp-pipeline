@@ -38,7 +38,7 @@ pipeline {
                 }
             }
             //DONE("Lab 4 - Artifact Management"): clean local docker app image
-            post {
+            /*post {
                 always {
                     echo "Clean local $APP_IMAGE_NAME image"
                     script {
@@ -50,7 +50,7 @@ pipeline {
                         }
                     }
                 }
-            }
+            }*/
         }
         //DONE("Lab 7 - Automated Security Scans"): add a stage
         stage('Security scanning') {
