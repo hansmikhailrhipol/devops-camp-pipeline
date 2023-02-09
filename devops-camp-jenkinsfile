@@ -64,6 +64,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deployment stage"
+                //DONE("Lab 8 - Create ConfigMap in Kubernetes")
+                sh 'kubectl -n hhipol apply -f ./afs-labs-student/kubernetes/config-map.yaml'
                 //DONE("Lab 5 - Deploy to EKS"): deploy docker images
                 sh 'kubectl -n hhipol set image deployment/app-deployment app-deployment=$HARBOR_REGISTRY/$HARBOR_PROJECT/$APP_IMAGE_NAME:$COMMIT_HASH-$PIPELINE_HASH'
                 //A random comment as part of Lab 6 to verify app pipeline kickoff without db changes
